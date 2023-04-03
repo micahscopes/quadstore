@@ -2,18 +2,19 @@
 import { AsyncIterator } from 'asynciterator';
 import { RESOLVED } from '../utils/stuff';
 
-let sortedSetImportErr: Error;
+import SortedSet from 'js-sorted-set';
+// let sortedSetImportErr: Error;
 
-let SortedSet: any = class {
-  constructor() {
-    throw new Error(`Failed to require module js-sorted-set: ${sortedSetImportErr?.message}`);
-  }
-};
+// let SortedSet: any = class {
+//   constructor() {
+//     throw new Error(`Failed to require module js-sorted-set: ${sortedSetImportErr?.message}`);
+//   }
+// };
 
-// @ts-ignore
-import('js-sorted-set')
-  .then((_) => { SortedSet = _.default; })
-  .catch((err) => { sortedSetImportErr = err; });
+// // @ts-ignore
+// import('js-sorted-set')
+//   .then((_) => { SortedSet = _.default; })
+//   .catch((err) => { sortedSetImportErr = err; });
 
 /**
  * Buffers all items emitted from `source` and sorts them according to
